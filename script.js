@@ -1,7 +1,7 @@
 
 const containers = document.querySelectorAll(".container");
 
-// Create one square inside each container
+// Create 3 squares inside the containers
 containers.forEach((container, index) => {
     const square = document.createElement("div");
 
@@ -14,28 +14,25 @@ containers.forEach((container, index) => {
 // Select all squares
 const squares = document.querySelectorAll(".square");
 
-// Hover functionality
-containers.forEach((container) => {
+// Attach events to individual squares
+squares.forEach((square) => {
 
-    container.addEventListener("mouseover", (event) => {
+    square.addEventListener("mouseover", () => {
 
-        if (!event.target.classList.contains("square")) return;
-
-        squares.forEach((square) => {
-            if (square === event.target) {
-                square.style.backgroundColor = "#6F4E37";
-            } else {
-                square.style.backgroundColor = "#E6E6FA";
+        squares.forEach((box) => {
+            if (box !== square) {
+                box.style.backgroundColor = "#6F4E37";
             }
         });
 
     });
 
-    // Reset colors when mouse leaves
-    container.addEventListener("mouseleave", () => {
-        squares.forEach((square) => {
-            square.style.backgroundColor = "#E6E6FA";
+    square.addEventListener("mouseleave", () => {
+
+        squares.forEach((box) => {
+            box.style.backgroundColor = "#E6E6FA";
         });
+
     });
 
 });
