@@ -29,6 +29,6 @@ const container = document.getElementById("container");
         // Reset colours when mouse leaves container
         container.addEventListener("mouseleave", () => {
             document.querySelectorAll(".box").forEach((box) => {
-                box.style.backgroundColor = "blue";
+                box.style.backgroundColor = "#E6E6FA";
             });
         });
