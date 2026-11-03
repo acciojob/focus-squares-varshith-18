@@ -1,1 +1,16 @@
 /*  your css code here. If applicable */
+ .container {
+            display: grid;
+            grid-template-columns: repeat(10, 80px);
+            gap: 10px;
+        }
+
+        .box {
+            height: 80px;
+            background-color: blue;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
