@@ -1,34 +1,41 @@
-//your JS code here. If required.
-const container = document.getElementById("container");
 
-        // Create 100 boxes
-        for (let i = 1; i <= 3; i++) {
-            const box = document.createElement("div");
+const containers = document.querySelectorAll(".container");
 
-            box.classList.add("box");
-            box.textContent = `Box ${i}`;
+// Create one square inside each container
+containers.forEach((container, index) => {
+    const square = document.createElement("div");
 
-            container.appendChild(box);
-        }
+    square.classList.add("square");
+    square.textContent = `Square ${index + 1}`;
 
-       
-        container.addEventListener("mouseover", (event) => {
-            if (!event.target.classList.contains("box")) return;
+    container.appendChild(square);
+});
 
-            const boxes = document.querySelectorAll(".box");
+// Select all squares
+const squares = document.querySelectorAll(".square");
 
-            boxes.forEach((box) => {
-                if (box !== event.target) {
-                    box.style.backgroundColor = "#E6E6FA";
-                } else {
-                    box.style.backgroundColor = "#6F4E37";
-                }
-            });
+// Hover functionality
+containers.forEach((container) => {
+
+    container.addEventListener("mouseover", (event) => {
+
+        if (!event.target.classList.contains("square")) return;
+
+        squares.forEach((square) => {
+            if (square === event.target) {
+                square.style.backgroundColor = "#6F4E37";
+            } else {
+                square.style.backgroundColor = "#E6E6FA";
+            }
         });
 
-        // Reset colours when mouse leaves container
-        container.addEventListener("mouseleave", () => {
-            document.querySelectorAll(".box").forEach((box) => {
-                box.style.backgroundColor = "#E6E6FA";
-            });
+    });
+
+    // Reset colors when mouse leaves
+    container.addEventListener("mouseleave", () => {
+        squares.forEach((square) => {
+            square.style.backgroundColor = "#E6E6FA";
         });
+    });
+
+});

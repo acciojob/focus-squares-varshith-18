@@ -1,24 +1,42 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Colorful Squares</title>
-	<style>
-		.square {
-			width: 50px;
-			height: 50px;
-			display: inline-block;
-			margin: 10px;
-			background-color: #E6E6FA; /*lavender */
-			cursor: pointer;
-		}
-	</style>
-</head>
-<body>
-	<div class="container" id="container" ></div>
-	<div class="container" id="container" ></div>
-	<div class="container" id="container" ></div>
 
-	<script type="text/javascript" src="./script.js">
-	</script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Squares</title>
+
+    <style>
+        .container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .square {
+            width: 50px;
+            height: 50px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            background-color: #E6E6FA;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container" id="container1"></div>
+
+    <div class="container" id="container2"></div>
+
+    <div class="container" id="container3"></div>
+
+    <script src="./script.js"></script>
+
 </body>
+
 </html>
