@@ -2,7 +2,7 @@
 const container = document.getElementById("container");
 
         // Create 100 boxes
-        for (let i = 1; i <= 100; i++) {
+        for (let i = 1; i <= 3; i++) {
             const box = document.createElement("div");
 
             box.classList.add("box");
@@ -19,9 +19,9 @@ const container = document.getElementById("container");
 
             boxes.forEach((box) => {
                 if (box !== event.target) {
-                    box.style.backgroundColor = "red";
+                    box.style.backgroundColor = "#E6E6FA";
                 } else {
-                    box.style.backgroundColor = "blue";
+                    box.style.backgroundColor = "#6F4E37";
                 }
             });
         });
